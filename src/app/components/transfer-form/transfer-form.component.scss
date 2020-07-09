@@ -1,0 +1,83 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.card {
+  border-radius: 4px;
+  background-color: #fafafa;
+  height: auto;
+  width: 20vw;
+  margin: 0 8px 16px;
+  justify-content: center;
+  align-items: center;
+  line-height: 35px;
+  box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.1);
+
+  div.card-title {
+    margin: auto;
+    background-color: #0B8396;
+    display: flex;
+    text-align: center;
+    color: white;
+
+    .arrow-icon {
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-image: url("../../../assets/icons/arrows.png");
+      width: 100%;
+      margin-left: 15px;
+    }
+  }
+
+  form {
+    margin: 30px 20px;
+  }
+}
+
+mat-form-field {
+  display: inline;
+  width: 100%;
+}
+
+.mat-form-field {
+  line-height: 1.5;
+}
+
+mat-label {
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+}
+
+button {
+  -webkit-appearance: none;
+  width: 10vw;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #EE7033;
+  border: none;
+  color: white;
+  float: right;
+  margin: 30px auto;
+  text-transform: uppercase;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  .card-container > *:not(.circle-link) {
+    width: 100%;
+  }
+
+  .card:not(.highlight-card) {
+    height: 16px;
+    margin: 8px 0;
+  }
+
+  .card.highlight-card span {
+    margin-left: 72px;
+  }
+}

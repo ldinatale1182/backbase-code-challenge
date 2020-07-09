@@ -1,0 +1,43 @@
+<div class="card-container">
+  <div class="card">
+    <div class="card-title">
+      <div class="briefcase-icon">Recent Transactions</div>
+    </div>
+    <section class="filter-section">
+      <mat-form-field class="example-form-field">
+        <input matInput type="text" (keyup)="applyFilter($event.target.value)" [(ngModel)]="value" placeholder="Search by typing...">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value='';applyFilter($event.target.value)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-label>Sort by</mat-label>
+      <mat-button-toggle-group name="sorting" aria-label="Sorting">
+        <mat-button-toggle class="date-button" (click)="sortTransactions('date')" value="date">Date
+          <span *ngIf="sortBy === 'date'" [ngClass]="{'ascending': ascendingOrder, 'descending': !ascendingOrder}"></span>
+        </mat-button-toggle>
+        <mat-button-toggle (click)="sortTransactions('merchant')" value="merchant">Beneficiary
+          <span *ngIf="sortBy === 'merchant'" [ngClass]="{'ascending': ascendingOrder, 'descending': !ascendingOrder}"></span>
+        </mat-button-toggle>
+        <mat-button-toggle (click)="sortTransactions('amount')" value="amount">Amount
+          <span *ngIf="sortBy === 'amount'" [ngClass]="{'ascending': ascendingOrder, 'descending': !ascendingOrder}"></span>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </section>
+
+    <table id="transactions-table">
+      <tbody>
+        <tr [ngStyle]="{'border-left-color': transaction.categoryCode}" *ngFor="let transaction of transactions | searchfilter: filterValue">
+          <td>
+            <div>{{ transaction.transactionDate | date:'MMM dd' }}</div>
+            <img [src]="transaction.merchantLogo" alt="image" />
+            <div class="merchant-info">
+              <div>{{ transaction.merchant }}</div>
+              <div>{{ transaction.transactionType }}</div>
+            </div>
+            <div>-{{ transaction.amount | currency }}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

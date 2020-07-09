@@ -1,0 +1,25 @@
+<div class="card-container">
+  <div class="card">
+    <div class="card-title">
+      <div class="arrow-icon">Make a Transfer</div>
+    </div>
+    <form [formGroup]="transactionForm" (ngSubmit)="addTransaction(transactionForm.value)">
+      <mat-form-field class="example-full-width">
+        <mat-label>From Account</mat-label>
+        <input matInput disabled value="Free Checking(4692) - ${{accountBalance}}">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>To Account</mat-label>
+        <input matInput placeholder="Georgia Power Electric Company" formControlName="merchant" [(ngModel)]="merchant" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" placeholder="$0.00" formControlName="amount" [(ngModel)]="amount" required>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

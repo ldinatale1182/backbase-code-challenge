@@ -1,0 +1,139 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.card {
+  border-radius: 4px;
+  background-color: #fafafa;
+  height: auto;
+  width: 60vw;
+  margin: 0 30px 16px;
+  justify-content: center;
+  align-items: center;
+  line-height: 50px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+
+  div.card-title {
+    margin: auto;
+    background-color: #0B8396;
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+
+    .briefcase-icon {
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-image: url("../../../assets/icons/briefcase.png");
+      width: 100%;
+      margin-left: 15px;
+    }
+  }
+}
+
+.filter-section {
+  margin: 15px 20px 0;
+  flex-direction: row;
+  display: flex;
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+tr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left-width: 10px;
+  border-left-style: solid;
+}
+
+td {
+  padding-left: 20px;
+  display: flex;
+  margin: 5px;
+
+  img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    position: relative;
+    margin: auto;
+  }
+
+  div {
+    &:first-of-type {
+      flex: 0.2;
+    }
+
+    &:last-of-type {
+      flex: 0.1;
+    }
+
+    flex: 0.5;
+  }
+
+  .merchant-info {
+    flex: 1;
+    line-height: 1.25;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.mat-form-field {
+  flex: 0.5;
+  margin-right: 20px;
+}
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
+  flex: 0.5;
+  margin-left: 10px;
+}
+.mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+  flex: 1;
+}
+.mat-button-toggle {
+  flex: 1;
+}
+
+span {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  top: 50%;
+}
+
+span.descending {
+  border-width: 8.7px 5px 0 5px;
+  border-color: #999999 transparent transparent transparent;
+}
+
+span.ascending {
+  border-width: 0 5px 8.7px 5px;
+border-color: transparent transparent #999999 transparent;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  .card-container > *:not(.circle-link) {
+    width: 100%;
+  }
+
+  .card:not(.highlight-card) {
+    height: 16px;
+    margin: 8px 0;
+  }
+
+  .card.highlight-card span {
+    margin-left: 72px;
+  }
+}
