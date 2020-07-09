@@ -40,4 +40,4 @@ There are two components, one for each epic. One is the recent transactions comp
 
 # GIF
 
-![Backbase](https://github.com/ldinatale/backbase-code-challenge/blob/master/Backbase.gif?raw=true)
+![Backbase](https://github.com/ldinatale1182/backbase-code-challenge/blob/master/Backbase.gif?raw=true)
