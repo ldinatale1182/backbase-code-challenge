@@ -36,4 +36,8 @@ The search functionality uses a search pipe that lives in src/app/filters/search
 
 There are two services that were created to achieve this. The BalanceService handles maintaining an accurate account balance for the user. The TransactionService is in charge of getting the mock data from the mock json file with a function called "getTransactions" and is also in charge of adding the user's new transactions to the top of the transactions array with a function called "addTransaction".
 
-There are two components, one for each epic. One is the recent transactions component which manages the recent transactions table, including the filtering and sorting. The other is the transfer form component, which utilizes the balance service to manage the user's balance and the transactions service to add new transactions. 
+There are two components, one for each epic. One is the recent transactions component which manages the recent transactions table, including the filtering and sorting. The other is the transfer form component, which utilizes the balance service to manage the user's balance and the transactions service to add new transactions.
+
+# GIF
+
+![Backbase](https://github.com/ldinatale/backbase-code-challenge/blob/master/Backbase.gif?raw=true)
